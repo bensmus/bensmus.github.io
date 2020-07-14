@@ -1,31 +1,29 @@
 import os
-from util import update_html_string, get_csv_if
+from util import update_html_string, get_csv, plot_ready
 
 # graphing modules
 import matplotlib.pyplot as plt
 import mpld3
 from mpld3 import plugins  # for interactive behaviour
 
-china_pop = get_csv_if(r'RawData\world_population.csv', {'Location':'China', 'Variant':'Medium'})
-india_pop = get_csv_if(r'RawData\world_population.csv', {'Location':'India', 'Variant':'Medium'})
-us_pop = get_csv_if(r'RawData\world_population.csv', {'Location': 'United States of America', 'Variant':'Medium'})
-indonesia_pop = get_csv_if(r'RawData\world_population.csv', {'Location':'Indonesia', 'Variant':'Medium'})
-pakistan_pop = get_csv_if(r'RawData\world_population.csv', {'Location':'Pakistan', 'Variant':'Medium'})
-nigeria_pop = get_csv_if(r'RawData\world_population.csv', {'Location':'Nigeria', 'Variant':'Medium'})
+china_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'China', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
+india_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'India', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
+us_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location': 'United States of America', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
+indonesia_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'Indonesia', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
+pakistan_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'Pakistan', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
+nigeria_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'Nigeria', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
 pops = [china_pop, india_pop, us_pop, indonesia_pop, pakistan_pop, nigeria_pop]
 
 fig, ax = plt.subplots()
 labels = ['China', 'India', 'United States of America', 'Indonesia', 'Pakistan', 'Nigeria']
 
-lines = []
 for pop in pops:
-    lines.append(ax.plot(pop))
+    years = plot_ready(pop)[0]
+    populations = plot_ready(pop)[1] * 1000  # unit conversion
+    ax.plot(years, populations)
 
+ax.legend(labels, loc='upper left')
 
-
-
-
-plt.plot()
 html_fig = mpld3.fig_to_html(fig)
 
 # look for a div with the following id
