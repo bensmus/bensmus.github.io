@@ -1,32 +1,36 @@
 ### Electronic corners ###
 
 # dubstep corner
-Scary Monsters and Nice Sprites:
+Skrillex-SMaNS:
   Artist: Skrillex
+  Song: Scary Monsters and Nice Sprites
   Link: https://www.youtube.com/watch?v=WSeNSzJ2-Jw
-  x: 1
-  y: 1
+  Left: 500
+  Top: 100
 
 # techno corner
-Alberto Balsam: 
+Aphex-AB: 
   Artist: Aphex Twin
+  Song: Alberto Balsam
   Link: https://www.youtube.com/watch?v=mUT3KoxVzQg  
-  x: 1
-  y: -1  
+  Left: 500
+  Top: 500
 
 
 ### Instrumental corners ###
 
 # metal corner
-Master of Puppets:
+Metallica-MoP:
   Artist: Metallica
+  Song: Master of Puppets
   Link: https://www.youtube.com/watch?v=xnKhsTXoKCI
-  x: -1
-  y: 1
+  Left: 100
+  Top: 100
 
 # classical corner
-Air in D major:
+Bach-Air:
   Artist: J.S. Bach
+  Song: Air in D major
   Link: https://www.youtube.com/watch?v=GkWjO8ZJcpc
-  x: -1
-  y: -1
+  Left: 100
+  Top: 500
