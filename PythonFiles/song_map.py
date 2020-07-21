@@ -9,13 +9,11 @@ with open(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData
 songs = list(data.keys())
 
 
-def return_marginstr(song, data):
+def return_css_content(song, data):
     '''e.g {margin-left: 100; margin-top: 100;}'''
 
-    marginstr = f"margin-left: {data[song]['Left']};" \
-        + f"margin-top: {data[song]['Top']};"
-    
-    return marginstr
+    content = f"position: absolute; top: {data[song]['Top']}px; left: {data[song]['Left']}px;"
+    return content
 
 with tag('html'):
     with tag('style'):
@@ -31,13 +29,13 @@ with tag('html'):
             cssstr += f'#{song}' + '{'
 
             # inside the block
-            cssstr += return_marginstr(song, data)
+            cssstr += return_css_content(song, data)
 
             # closing brace
             cssstr += '}'
 
         text(cssstr)
-        
+
     with tag('body'):
 
         # song is a key in data
