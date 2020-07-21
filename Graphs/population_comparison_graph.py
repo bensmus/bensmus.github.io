@@ -4,7 +4,6 @@ from util import update_html_string, get_csv, plot_ready
 # graphing modules
 import matplotlib.pyplot as plt
 import mpld3
-from mpld3 import plugins  # for interactive behaviour
 
 china_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'China', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
 india_pop = get_csv(r'C:\Users\Ben Smus\Learning_Programming\Web\bensmus.github.io\RawData\world_population.csv', spec={'Location':'India', 'Variant':'Medium'}, col=['Time', 'PopTotal'])
