@@ -1,36 +1,37 @@
 ### Electronic corners ###
-
-# dubstep corner
 Skrillex-SMaNS:
+  Genre: Dubstep
   Artist: Skrillex
   Song: Scary Monsters and Nice Sprites
+  Year: 2010
   Link: https://www.youtube.com/watch?v=WSeNSzJ2-Jw
   Left: 1000
   Top: 100
 
-# techno corner
-Aphex-AB: 
+  Genre: House/Techno
   Artist: Aphex Twin
   Song: Alberto Balsam
+  Year: 1995
   Link: https://www.youtube.com/watch?v=mUT3KoxVzQg  
   Left: 1000
   Top: 800
 
 
 ### Instrumental corners ###
-
-# metal corner
 Metallica-MoP:
+  Genre: Metal
   Artist: Metallica
   Song: Master of Puppets
+  Year: 1986
   Link: https://www.youtube.com/watch?v=xnKhsTXoKCI
   Left: 100
   Top: 100
 
-# classical corner
 Bach-Air:
+  Genre: Classical
   Artist: J.S. Bach
   Song: Air in D major
+  Year: 1723
   Link: https://www.youtube.com/watch?v=GkWjO8ZJcpc
   Left: 100
   Top: 800
