@@ -5,7 +5,7 @@ Skrillex-SMaNS:
   Artist: Skrillex
   Song: Scary Monsters and Nice Sprites
   Link: https://www.youtube.com/watch?v=WSeNSzJ2-Jw
-  Left: 500
+  Left: 1000
   Top: 100
 
 # techno corner
@@ -13,8 +13,8 @@ Aphex-AB:
   Artist: Aphex Twin
   Song: Alberto Balsam
   Link: https://www.youtube.com/watch?v=mUT3KoxVzQg  
-  Left: 500
-  Top: 500
+  Left: 1000
+  Top: 800
 
 
 ### Instrumental corners ###
@@ -33,4 +33,4 @@ Bach-Air:
   Song: Air in D major
   Link: https://www.youtube.com/watch?v=GkWjO8ZJcpc
   Left: 100
-  Top: 500
+  Top: 800

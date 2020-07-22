@@ -15,13 +15,22 @@ def return_css_content(song, data):
     content = f"position: absolute; top: {data[song]['Top']}px; left: {data[song]['Left']}px;"
     return content
 
+
 with tag('html'):
     with tag('style'):
 
-        # song is a key in data
+        # nicer font
+        text("body {font-family: 'Roboto', sans-serif;}")
 
+        # header rules
+        text("h1 {position: absolute; left: 100; top: 10; font-weight: 300; line-height: normal;}")
+
+        # general style for all songs
+        text(".dropdown {display: inline-block;}")
+
+        # song is a key in data
         cssstr = ''
-        for song in songs:
+        for song in songs: 
 
             # making the css rule
             
@@ -38,11 +47,18 @@ with tag('html'):
 
     with tag('body'):
 
+        with tag('h1'):
+            text('Song Map')
+        
         # song is a key in data
         for song in songs:
-            with tag('div', id=song):
+            with tag('div', id=song, klass='dropdown'):
                 with tag('a', href=data[song]['Link'], target='_blank'):
                     text(data[song]['Song'])
+                # adding dropdown content to the div
+                with tag('div', klass='dropdown-content'):
+                    text(data[song]['Artist'])
+                
 
 htmlstr = doc.getvalue()
 print(htmlstr)
