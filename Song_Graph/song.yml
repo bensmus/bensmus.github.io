@@ -1,0 +1,72 @@
+# max electronic at left 1000
+# max chill at top 800
+
+Skrillex-SMaNS:
+  Genre: Dubstep  # Shown on mouseover
+  Supergenre: Dance  # Used for coloring
+  Artist: Skrillex  # Shown always
+  Song: Scary Monsters and Nice Sprites  # Short form shown default, Long form shown on mouseover
+  Year: 2010  # Shown on mouseover
+  Link: https://www.youtube.com/watch?v=WSeNSzJ2-Jw  # Embedded in songname on mouseover
+  Left: 1000
+  Top: 100
+
+Aphex-AB:
+  Genre: Techno 
+  Supergenre: Electronic  
+  Artist: Aphex Twin
+  Song: Alberto Balsam
+  Year: 1995
+  Link: https://www.youtube.com/watch?v=mUT3KoxVzQg  
+  Left: 1000
+  Top: 800
+
+Deadmau5-Strobe:
+  Genre: House
+  Supergenre: Electronic  
+  Artist: Deadmau5
+  Song: Strobe
+  Year: 2009
+  Link: https://www.youtube.com/watch?v=tKi9Z-f6qX4
+  Left: 900
+  Top: 700
+  
+Metallica-MoP:
+  Genre: Metal
+  Supergenre: Rock
+  Artist: Metallica
+  Song: Master of Puppets
+  Year: 1986
+  Link: https://www.youtube.com/watch?v=xnKhsTXoKCI
+  Left: 100
+  Top: 100
+
+Bowie-LoM:
+  Genre: Rock
+  Supergenre: Rock
+  Artist: David Bowie
+  Song: Life on Mars?
+  Year: 1971
+  Link: https://www.youtube.com/watch?v=AZKcl4-tcuo
+  Left: 200
+  Top: 300
+
+Pink-WYWH:
+  Genre: Rock
+  Supergenre: Rock
+  Artist: Pink Floyd
+  Song: Wish You Were Here (Album)
+  Year: 1975
+  Link: https://www.youtube.com/watch?v=NtAAg_PJlLw
+  Left: 400
+  Top: 700
+
+Bach-Air:
+  Genre: Baroque
+  Supergenre: Classical
+  Artist: J.S. Bach
+  Song: Air in D major
+  Year: 1723
+  Link: https://www.youtube.com/watch?v=GkWjO8ZJcpc
+  Left: 100
+  Top: 800

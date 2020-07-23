@@ -1,5 +1,5 @@
 import os
-from util import update_html_string, get_csv, plot_ready
+from population_util import update_html_string, get_csv, plot_ready
 
 # graphing modules
 import matplotlib.pyplot as plt
