@@ -1,6 +1,3 @@
-# max electronic at left 1000
-# max chill at top 800
-
 Skrillex-SMaNS:
   Genre: Dubstep  # Shown on mouseover
   Supergenre: Dance  # Used for coloring
@@ -22,7 +19,7 @@ Aphex-AB:
   Top: 800
 
 Deadmau5-Strobe:
-  Genre: House
+  Genre: House/Ambient
   Supergenre: Electronic  
   Artist: Deadmau5
   Song: Strobe
@@ -30,7 +27,27 @@ Deadmau5-Strobe:
   Link: https://www.youtube.com/watch?v=tKi9Z-f6qX4
   Left: 900
   Top: 700
-  
+
+Daft-Voyager:
+  Genre: House
+  Supergenre: Electronic
+  Artist: Daft Punk
+  Song: Voyager
+  Year: 2001
+  Link: https://www.youtube.com/watch?v=INbgG9M0WYE
+  Left: 1000
+  Top: 600
+
+Nirvana-Lithium:
+  Genre: Punk/Metal
+  Supergenre: Rock
+  Artist: Nirvana
+  Song: Lithium
+  Year: 1992
+  Link: https://www.youtube.com/watch?v=pkcJEvMcnEg
+  Left: 100
+  Top: 120
+
 Metallica-MoP:
   Genre: Metal
   Supergenre: Rock
@@ -48,8 +65,8 @@ Bowie-LoM:
   Song: Life on Mars?
   Year: 1971
   Link: https://www.youtube.com/watch?v=AZKcl4-tcuo
-  Left: 200
-  Top: 300
+  Left: 400
+  Top: 600
 
 Pink-WYWH:
   Genre: Rock
@@ -59,7 +76,7 @@ Pink-WYWH:
   Year: 1975
   Link: https://www.youtube.com/watch?v=NtAAg_PJlLw
   Left: 400
-  Top: 700
+  Top: 750
 
 Bach-Air:
   Genre: Baroque
