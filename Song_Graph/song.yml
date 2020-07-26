@@ -68,6 +68,16 @@ Bowie-LoM:
   Left: 400
   Top: 600
 
+Beatles-Money:
+  Genre: Rock
+  Supergenre: Rock
+  Artist: Beatles
+  Song: You Never Give Me Your Money
+  Year: 1969
+  Link: https://www.youtube.com/watch?v=BpndGZ71yww
+  Left: 400
+  Top: 700
+
 Pink-WYWH:
   Genre: Rock
   Supergenre: Rock
@@ -97,3 +107,4 @@ Bach-Air:
   Link: https://www.youtube.com/watch?v=GkWjO8ZJcpc
   Left: 100
   Top: 800
+
