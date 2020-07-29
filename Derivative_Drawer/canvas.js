@@ -1,6 +1,10 @@
+// TODO: https://stackoverflow.com/questions/12231597/html-5-canvas-get-pixel-data-for-a-path
+// Allow pretty path drawings and undo
+
 // setup for any 2d canvas script
 const canvas = document.getElementById('canvas');
 const undo = document.getElementById('undo')
+const calculate = document.getElementById('calculate')
 const ctx = canvas.getContext('2d')
 
 let painting = false;
@@ -46,17 +50,20 @@ canvas.addEventListener('mousemove', (evt) => {
 });
 
 undo.addEventListener('click', () => {
-    let imageData = ctx.getImageData(0, 0, 300, 150);
-    // remove the last curve by making it transparent
-
-    let lastCurve = curves.pop();  // removes and returns, works as expected
-
-    for (let index = 0; index < lastCurve.length; index++) {
-        const pos = lastCurve[index];
-
-        console.log('old:', imageData.data[300*pos.y*4 + pos.x*4 + 3]);    
-        setAlpha(imageData.data, pos, 0);   
-        console.log('new:', imageData.data[300*pos.y*4 + pos.x*4 + 3]); 
-    }
-    ctx.putImageData(imageData, 0, 0);
+    eraseCurve(curves.pop());
 });
+
+calculate.addEventListener('click', () => {
+    console.log('calculating...');
+});
+
+function eraseCurve(curve) {
+    let imageData = ctx.getImageData(0, 0, 300, 150);
+
+    for (let index = 0; index < curve.length; index++) {
+        const pos = curve[index];
+        setAlpha(imageData.data, pos, 0);  
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+}
