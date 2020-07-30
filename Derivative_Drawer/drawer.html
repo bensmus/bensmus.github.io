@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html>
-<style>
-    canvas {
-        border: 2px solid black;
-    }
-    #undo {
-        position: absolute;
-        left: 10px;
-        top: 170px;  
-    }
-    #calculate {
-        position: absolute;
-        left: 200px;
-        top: 170px;  
-    }
-</style>
+	<style>
+		canvas {
+			border: 1px solid grey;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+	</style>
 
-<head>
-    <title>Derivative Drawer</title>
-</head>
+	<head>
+		<title>Derivative Drawer</title>
+	</head>
 
-<body>
-    
-    <button id='undo'>
-        undo
-    </button>
+	<body>
+		<!-- the canvas that has the curve you just finished drawing -->
+		<canvas id="canvas"></canvas>
 
-    <button id='calculate'>
-        calculate
-    </button>
-    
-    <canvas id='canvas'>
-        <script src="canvas.js"></script>
-    </canvas>
+		<!-- the canvas that has the axes on it -->
+		<canvas id="background-canvas"></canvas>
 
-</body>
+		<!-- the canvas that has the output (result) -->
+		<canvas id="output-canvas"></canvas>
 
+		<!-- the canvas you draw on -->
+		<canvas id="draw-canvas"></canvas>
+	</body>
+
+	<script src="canvas.js"></script>
 </html>
