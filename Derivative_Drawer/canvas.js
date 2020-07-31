@@ -10,11 +10,11 @@ const backgroundCtx = backgroundCanvas.getContext('2d');
 const outputCtx = outputCanvas.getContext('2d');
 const drawCtx = drawCanvas.getContext('2d');
 
-function toUserCoors(x, y) {
+function toUserCoors([x, y]) {
 	return [x - 10, -(y - 75)];
 }
 
-function fromUserCoors(x, y) {
+function fromUserCoors([x, y]) {
 	return [x + 10, -y + 75];
 }
 
@@ -35,29 +35,77 @@ drawLine(backgroundCtx, 'purple', [10, 10], [10, 140], 2); // y-axis
 drawLine(outputCtx, 'purple', [10, 75], [290, 75], 2); // x-axis
 drawLine(outputCtx, 'purple', [10, 10], [10, 140], 2); // y-axis
 
+function getXMatchIndex(x, dst) {
+	// gets the index in
+	/*
+	objArr1.forEach((pos1) => {
+		objArr2.forEach((pos2) => {
+			if (pos1.x == pos2.x) {
+				return false;
+			}
+		});
+	});
+	return true;
+	*/
+	for (const [dstIndex, dstObj] of dst.entries()) {
+		if (x == dstObj.x) {
+			return dstIndex;
+		}
+	}
+}
+
 function drawDerivative(ctx, color, curve, width) {
 	// transform the points to a new coordinate system where
 	// [10, 75] is the origin
 
+	/*
 	// internally convert the pos.x, pos.y into a dictionary {x1:y1, x2:y2}
 	let curveDict = {}; // by having a dictionary, we are making a one to one mapping
 	curve.forEach((pos) => {
 		let [newx, newy] = toUserCoors(pos.x, pos.y);
 		curveDict[newx] = newy;
 	});
+	*/
 
-	// now that we have a one to one mapping, get the [x, y] values from the dictionary
-	// note that javascript keys are always strings
-	curveOneToOne = [];
-	for (const x in curveDict) {
-		curveOneToOne.push([parseInt(x), curveDict[x]]);
+	// because curve is in no particular order in terms of x, we need to sort that
+	let objectArray = [];
+	curve.forEach((pos) => {
+		dstIndex = getXMatchIndex(pos.x, objectArray);
+		if (dstIndex == undefined) {
+			newPos = {
+				x: pos.x,
+				y: [pos.y],
+			};
+			objectArray.push(newPos);
+		} else {
+			objectArray[dstIndex].y.push(pos.y);
+		}
+	});
+
+	// sort the object array by x value
+	objectArray = objectArray.sort((obj1, obj2) => {
+		return obj1.x - obj2.x;
+	});
+
+	console.log('objectArray', objectArray);
+
+	let curveOneToOne = [];
+	for (const index in objectArray) {
+		const object = objectArray[index];
+		const x = object.x;
+		const y = object.y.reduce((a, b) => a + b, 0) / object.y.length; // getting average value (0 is the default value)
+		curveOneToOne.push([x, y]);
 	}
-	console.log(curveOneToOne);
+
+	// need to convert curveOneToOne to userCoors
+
+	curveOneToOne = curveOneToOne.map(toUserCoors);
+
 	// 2d array with x y
 	derivCurve = [];
 	for (let index = 1; index < curveOneToOne.length - 1; index++) {
 		const x = curveOneToOne[index][0];
-		const prevY = curveOneToOne[index][1];
+		const prevY = curveOneToOne[index - 1][1];
 		const nextY = curveOneToOne[index + 1][1];
 		const theoreticalResult = (nextY - prevY) / 2;
 
@@ -66,10 +114,10 @@ function drawDerivative(ctx, color, curve, width) {
 
 		derivCurve.push([x, pixelValue]);
 	}
-	console.log(derivCurve);
+
 	drawReadyDerivCurve = [];
 	derivCurve.forEach((point) => {
-		drawReadyDerivCurve.push(fromUserCoors(point[0], point[1]));
+		drawReadyDerivCurve.push(fromUserCoors(point));
 	});
 
 	ctx.strokeStyle = color;
