@@ -1,0 +1,2 @@
+To build site:
+`npx @11ty/eleventy`
