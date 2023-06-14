@@ -1,8 +1,8 @@
-module.exports = config => {
+module.exports = (config) => {
     return {
-      dir: {
-        input: 'src',
-        output: 'build'
-      }
-    };
-  };
+        dir: {
+            input: 'src',
+            output: 'build'
+        }
+    }
+}

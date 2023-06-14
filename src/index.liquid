@@ -1,3 +1,24 @@
+---
+projects:
+    - {
+        name: Pitch sensitivity test,
+        info: Test how well you can hear differences in pitch,
+        demolink: https://tonediff.surge.sh,
+        codelink: https://github.com/bensmus/tonediff
+    }
+    - {
+        name: 3D cube world,
+        info: Explore the wonderful world of 'cube',
+        demolink: https://cubeofcolors.surge.sh,
+        codelink: https://github.com/bensmus/perspective_canvas_jun2
+    }
+    - {
+        name: Grid pathfinding, 
+        info: A demo of Astar pathfinding where you can draw your own obstacles, 
+        demolink: https://astarpathing.surge.sh, 
+        codelink: https://github.com/bensmus/Astar-ts
+    }
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,21 +69,15 @@
     <div class="content">
         <h1>Coding projects</h1>
         <div class="projects">
-            <div class="project">
-                <div class="project-info"><strong>3D Cube World</strong><br>Explore the wonderful world of 'cube'</div>
-                <div class="project-buttons">           
-                    <a class="project-button" href="https://cubeofcolors.surge.sh">Demo</a>
-                    <a class="project-code-button project-button" href="https://github.com/bensmus/perspective_canvas_jun2">Code</a>
+            {% for project in projects -%}
+                <div class="project">
+                    <div class="project-info"><strong>{{ project.name }}</strong><br>{{ project.info }}</div>
+                    <div class="project-buttons">           
+                        <a class="project-button" href="{{ project.demolink }}">Demo</a>
+                        <a class="project-code-button project-button" href="{{ project.codelink }}">Code</a>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <a href="https://tonediff.surge.sh">Pitch sensitivity test</a><br>
-                <span>Test how well you can hear differences in pitch</span>
-            </div>
-            <div class="project">
-                <a href="https://astarpathing.surge.sh">Grid pathfinding</a><br>
-                <span>A demo of Astar pathfinding where you can draw your own obstacles</span>
-            </div>
+            {% endfor -%} 
         </div>
     </div>
 </body>
