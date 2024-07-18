@@ -1,26 +1,33 @@
 ---
 projects:
     - {
+        name: Composer quiz,
+        info: "Audio-based quiz: detect the composer
+        from a segment of their composition.",
+        demolink: https://composerquiz.surge.sh,
+        codelink: https://github.com/bensmus/composerquiz-web
+    }
+    - {
         name: Pitch sensitivity test,
-        info: Test how well you can hear differences in pitch,
+        info: Test how well you can hear differences in pitch.,
         demolink: https://tonediff.surge.sh,
         codelink: https://github.com/bensmus/tonediff
     }
     - {
         name: 3D cube world,
-        info: Explore the wonderful world of 'cube',
+        info: Explore light effects on an animated 3D cube.,
         demolink: https://cubeofcolors.surge.sh,
         codelink: https://github.com/bensmus/perspective_canvas_jun2
     }
     - {
         name: Grid pathfinding, 
-        info: A demo of Astar pathfinding where you can draw your own obstacles, 
+        info: A demo of A-Star pathfinding where you can draw your own obstacles., 
         demolink: https://astarpathing.surge.sh, 
         codelink: https://github.com/bensmus/Astar-ts
     }
     - {
         name: Weather app,
-        info: An app that shows you weather for a city using weather and sunset/sunrise apis,
+        info: An app that shows you weather for a city using weather and sunset/sunrise APIs.,
         demolink: http://moose-weather.surge.sh/,
         codelink: https://github.com/bensmus/weatherapp
     }
@@ -34,25 +41,28 @@ projects:
     <title>bensmus - home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --project-border: rgb(100, 157, 255);
+        }
         body {
             font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
             font-size: larger;
-        }
-        h1 {
-            font-family: "Jersey 10", sans-serif;
-            font-size: 60px;
-            font-style: normal;
-        }
-        .content {
-            max-width: 960px;
+            background-color: #333;
+            max-width: 700px;
             margin: auto;
         }
+        h1 {
+            font-family: "Lora", serif;
+            color: #93faff;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 300;
+        }
         .project {
-            margin-bottom: 45px;
+            margin-bottom: 25px;
             background-image: linear-gradient(45deg, #93faff, #5bed5b);
-            box-shadow: 3px 3px 11px 0px #ADADAD;
         }
         .project p {
             padding: 5px;
@@ -60,41 +70,47 @@ projects:
         .projects {
             display: flex;
             flex-direction: column;
-            width: fit-content;
         }
         .project-buttons {
             display: flex;
         }
         .project-info {
             padding: 10px;
+            border: 3px solid var(--project-border);
+            border-bottom: 0px solid var(--project-border);
         }
         .project-button {
             width: 50%;
             text-decoration: none;
             color: initial;
             text-align: center;
-            border: 2px solid rgba(0, 150, 255, 1);
+            border: 3px solid var(--project-border);
+            border-right: 0px solid var(--project-border);
             padding: 4px;
         }
+        .project-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            text-decoration-line: underline;
+        }
         .project-code-button {
-            margin-left: -2px;
+            margin-left: -3px;
+            border: 3px solid var(--project-border);
+            border-left: 3px solid var(--project-border);
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Coding projects</h1>
-        <div class="projects">
-            {% for project in projects -%}
-                <div class="project">
-                    <div class="project-info"><strong>{{ project.name }}</strong><br>{{ project.info }}</div>
-                    <div class="project-buttons">           
-                        <a class="project-button" href="{{ project.demolink }}">Demo</a>
-                        <a class="project-code-button project-button" href="{{ project.codelink }}">Code</a>
-                    </div>
+    <h1>Links to web projects</h1>
+    <div class="projects">
+        {% for project in projects -%}
+            <div class="project">
+                <div class="project-info"><strong>{{ project.name }}</strong><br>{{ project.info }}</div>
+                <div class="project-buttons">           
+                    <a class="project-button" href="{{ project.demolink }}">Demo</a>
+                    <a class="project-code-button project-button" href="{{ project.codelink }}">Code</a>
                 </div>
-            {% endfor -%} 
-        </div>
+            </div>
+        {% endfor -%} 
     </div>
 </body>
 </html>
